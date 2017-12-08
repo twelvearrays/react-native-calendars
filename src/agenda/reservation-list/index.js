@@ -116,6 +116,7 @@ class ReactComp extends Component {
           renderEmptyDate={this.props.renderEmptyDate}
           theme={this.props.theme}
           rowHasChanged={this.props.rowHasChanged}
+          popModal={item => this.props.popModal(item)}
         />
       </View>
     );
