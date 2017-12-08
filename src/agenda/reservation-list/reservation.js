@@ -38,7 +38,7 @@ class ReservationListItem extends Component {
     const today = dateutils.sameDate(date, XDate()) ? this.styles.today : undefined;
     if (date) {
       return (
-         <TouchableOpacity style={this.styles.day} onPress={() => this.props.popModal(item)}>
+         <TouchableOpacity style={this.styles.day} onLongPress={() => this.props.popModal(item)}>
            <Text style={[this.styles.dayNum, today]}>
             {date.getMonth() + 1 + '/' + date.getDate()}
           </Text>
