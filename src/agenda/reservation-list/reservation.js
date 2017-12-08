@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {xdateToData} from '../../interface';
 import XDate from 'xdate';
 import dateutils from '../../dateutils';
@@ -38,10 +38,12 @@ class ReservationListItem extends Component {
     const today = dateutils.sameDate(date, XDate()) ? this.styles.today : undefined;
     if (date) {
       return (
-        <View style={this.styles.day}>
-          <Text style={[this.styles.dayNum, today]}>{date.getDate()}</Text>
+         <TouchableOpacity style={this.styles.day} onPress={() => this.props.popModal(item)}>
+           <Text style={[this.styles.dayNum, today]}>
+            {date.getMonth() + 1 + '/' + date.getDate()}
+          </Text>
           <Text style={[this.styles.dayText, today]}>{XDate.locales[XDate.defaultLocale].dayNamesShort[date.getDay()]}</Text>
-        </View>
+        </TouchableOpacity>
       );
     } else {
       return (
