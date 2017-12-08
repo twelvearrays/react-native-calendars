@@ -277,6 +277,7 @@ export default class AgendaView extends Component {
         onScroll={() => {}}
         ref={(c) => this.list = c}
         theme={this.props.theme}
+        popModal={item => this.props.popModal(item)}
       />
     );
   }
