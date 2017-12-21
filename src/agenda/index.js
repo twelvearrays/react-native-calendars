@@ -395,6 +395,7 @@ export default class AgendaView extends Component {
               pastScrollRange={this.props.pastScrollRange}
               futureScrollRange={this.props.futureScrollRange}
               dayComponent={this.props.dayComponent}
+              disabledByDefault={this.props.disabledByDefault}
             />
           </Animated.View>
           {knob}
