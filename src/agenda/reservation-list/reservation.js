@@ -38,12 +38,19 @@ class ReservationListItem extends Component {
     const today = dateutils.sameDate(date, XDate()) ? this.styles.today : undefined;
     if (date) {
       return (
+<<<<<<< HEAD
          <TouchableOpacity style={this.styles.day} onLongPress={() => this.props.popModal(item)}>
            <Text style={[this.styles.dayNum, today]}>
             {date.getMonth() + 1 + '/' + date.getDate()}
           </Text>
           <Text style={[this.styles.dayText, today]}>{XDate.locales[XDate.defaultLocale].dayNamesShort[date.getDay()]}</Text>
         </TouchableOpacity>
+=======
+        <View style={this.styles.day}>
+          <Text allowFontScaling={false} style={[this.styles.dayNum, today]}>{date.getDate()}</Text>
+          <Text allowFontScaling={false} style={[this.styles.dayText, today]}>{XDate.locales[XDate.defaultLocale].dayNamesShort[date.getDay()]}</Text>
+        </View>
+>>>>>>> e5b5e6946d16f4ee430c7070b2d8f6e1be6365b2
       );
     } else {
       return (
